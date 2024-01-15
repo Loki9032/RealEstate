@@ -1,0 +1,70 @@
+<template>
+	<div class=" body" if:true={property}>
+		<div class="bg-image">
+			<lightning-formatted-rich-text class="image" value={property.Property_Image__c}>
+			</lightning-formatted-rich-text>
+		</div>
+
+		<div class="cards-container ">
+			<div class="card slds-m-around_medium large-card slds-scrollable_y">
+				<p class="propertyName">{property.Name}</p>
+
+
+				<template if:true={property.aboutPropertySplit}>
+					<template for:each={property.aboutPropertySplit} for:item="item" for:index="index">
+						<div key={item} class="about-property">
+							<p class="about">{item}</p>
+						</div>
+					</template>
+				</template>
+
+
+				<template if:true={property.interiorImages}>
+					<div class="image-grid">
+						<template for:each={property.interiorImages} for:item="item" for:index="index">
+							<div key={item} class="propertyImage">
+								<lightning-formatted-rich-text class="Interiorimage" value={item}>
+								</lightning-formatted-rich-text>
+							</div>
+						</template>
+					</div>
+				</template>
+
+
+				<template if:true={mapMakers}>
+					
+					<div class="map-container">
+						<lightning-map map-markers={mapMakers} markers-title="Property Location" zoom-level="15"
+							latitude={property.Location__c.latitude} longitude={property.Location__c.longitude} show-footer>
+						</lightning-map>
+					</div>
+				</template>
+			</div>
+
+
+
+			<div class="card slds-m-around_small small-card">
+				<div class="slds-m-around_medium ">
+
+					<div class="property-value">
+						<h1> Property for Sale </h1>
+						<p>${property.Property_Value__c}</p>
+					</div>
+
+					<div class="agent-details">
+						<h1> Contact The Agent </h1>
+						<div class="agent-photo">
+							<lightning-formatted-rich-text value={property.Agent_Photo__c}>
+							</lightning-formatted-rich-text>
+						</div>
+						<p class="agent-name"> {property. Agent_Name__c} </p>
+						<p class="agent-phone"> {property. Agent_Phone__c}</p>
+						<p class="agent-mail"> {property. Agent_Email__c} </p>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</template>

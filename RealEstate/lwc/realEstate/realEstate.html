@@ -1,0 +1,28 @@
+<template>
+
+	<div class="body">
+		<h2 class="heading-medium"><strong>Featured Listings</strong></h2>
+
+		<div class="properties">
+			<div class="slds-grid slds-wrap">
+				<template for:each={properties}   for:item="property">
+					<div key={property.Id} class="slds-size_1-of-3 slds-p-around_medium " >
+						<div class="slds-box ">
+							<div class="property-image property-box" data-id={property.Id} onclick={redirectToProperty}>
+								<lightning-formatted-rich-text class="image"  value={property.Property_Image__c}>
+								</lightning-formatted-rich-text>
+							</div>
+							<div class="property-name">
+								<p>{property.Name}</p>
+							</div>
+						</div>
+					</div>
+				</template>
+				<template if:true={properties.length}></template>
+			</div>
+		</div>
+
+	</div>
+
+
+</template>

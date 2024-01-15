@@ -1,0 +1,90 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+	background-color: whitesmoke;
+	padding: 30px;
+}
+
+h2{
+	font-size: 40px;
+	font-weight: bold;
+	padding: 15px 15px 15px 0 ;
+}
+
+p{
+	font-size: 20px;
+    margin-bottom: 20px;
+}
+.section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+	padding: 25px;
+}
+
+.column {
+    flex: 1;
+    padding: 10px;
+	margin: 15px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+	box-shadow: black;
+}
+/* 
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap; 
+    }
+    .section {
+        width: 100%; 
+        margin-bottom: 5px; 
+    }
+
+    h2{
+	font-size: 25px;
+	font-weight: bold;
+	padding: 5px 5px 5px 0 ;
+}
+
+p{
+	font-size: 15px;
+    margin-bottom: 10px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+	box-shadow: black;
+}
+} */
+
+@media screen and (max-width: 768px) {
+        .container {
+            padding: 5px; /* Adjust padding for smaller screens */
+        }
+        .section {
+            display: block;
+            width: 100%;
+        }
+        .column {
+            margin: 0; /* Remove margin for columns */
+            padding: 8px;
+        }
+        img {
+            margin-bottom: 15px; /* Add spacing between images and text */
+        }
+
+        h2{
+        font-size: 25px;
+        }
+
+          p{
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+}

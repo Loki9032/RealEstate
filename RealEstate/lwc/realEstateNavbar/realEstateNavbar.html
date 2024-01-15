@@ -1,0 +1,14 @@
+<template>
+    <nav class="navbar">
+        <div class="logo-container">
+            
+           <lightning-icon class="Home-icon" icon-name="utility:home" size="medium" onclick={navigateToHome}></lightning-icon>
+           <span class="logo-text" onclick={navigateToHome}>PrimePeak Estates</span>
+
+        </div>
+        <div class="nav-buttons">
+            <button class="text-button" onclick={handleAboutUs}>About Us</button>
+            <button class="text-button" onclick={handleContact}>Contact</button>
+        </div>
+    </nav>
+</template>
